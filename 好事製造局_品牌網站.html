@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#F5F0E5">
+  <meta name="description" content="好事製造局 GOOD THINGS DEPT.｜把台灣吉祥文化變成能蓋章、能翻轉、能分享的日常小物。好事不只會發生，還可以自己製造！">
+  <title>好事製造局 GOOD THINGS DEPT.｜好事不只會發生，還可以自己製造！</title>
+  <style>
+    :root{--paper:#f5f0e5;--paper-light:#fffaf0;--ink:#25352f;--muted:#697169;--red:#d95045;--red-deep:#b94038;--yellow:#f4c95f;--green:#426b59;--forest:#244638;--white:#fffefa;--line:rgba(37,53,47,.2);--font:'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px;overflow-x:clip}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}::selection{background:var(--yellow);color:var(--ink)}
+    .container{width:min(1220px,calc(100% - 64px));margin:0 auto}
+    .sr-only{position:absolute!important;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.13em;font-weight:900;text-transform:uppercase}
+    .eyebrow .dash{width:26px;height:2px;background:currentColor}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;border:2px solid var(--ink);background:var(--yellow);color:var(--ink);min-height:52px;padding:12px 22px;font-weight:900;border-radius:7px;box-shadow:5px 5px 0 var(--ink);transition:transform .2s,box-shadow .2s,background .2s;line-height:1.3}
+    .btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}.btn:active{transform:translate(5px,5px);box-shadow:0 0 0 var(--ink)}
+    .btn-red{background:var(--red);color:white}.btn-plain{background:transparent}.btn-small{min-height:40px;padding:8px 13px;box-shadow:3px 3px 0 var(--ink);font-size:13px}
+    .announcement{min-height:31px;background:var(--red);color:#fff8ec;font-size:11px;letter-spacing:.17em;font-weight:900;display:flex;align-items:center;justify-content:center;gap:18px;text-align:center;padding:6px 15px}
+    .announcement .twinkle{font-size:13px;animation:pulseStar 2s ease-in-out infinite}
+    @keyframes pulseStar{50%{transform:rotate(90deg) scale(1.25)}}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(245,240,229,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:77px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+    .brand{display:inline-flex;align-items:center;gap:11px;flex-shrink:0}
+    .brand-mark{width:42px;height:42px;border:2px solid var(--red);border-radius:9px;display:grid;place-items:center;color:var(--red);font-size:26px;font-weight:1000;position:relative;transform:rotate(-6deg);line-height:1}
+    .brand-mark::before{content:'';position:absolute;inset:4px;border:1px solid currentColor;border-radius:4px;opacity:.4}
+    .brand-name{font-size:20px;font-weight:1000;letter-spacing:.03em;line-height:1.15}.brand-en{font-size:9px;letter-spacing:.16em;font-weight:900;color:var(--red);margin-top:5px}
+    .nav-links{display:flex;gap:35px;align-items:center;margin-left:auto}.nav-links a{font-size:14px;font-weight:850;position:relative}.nav-links a:after{content:'';position:absolute;bottom:-7px;left:0;width:100%;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .2s}.nav-links a:hover:after{transform:scaleX(1)}
+    .nav-cta{font-size:13px;border:2px solid var(--ink);border-radius:5px;padding:11px 18px;background:var(--yellow);box-shadow:3px 3px 0 var(--ink);font-weight:1000;white-space:nowrap;transition:transform .2s}.nav-cta:hover{transform:translateY(-3px)}.hamburger{display:none;background:none;border:0;font-size:29px;padding:4px 6px}
+    /* HERO */
+    .hero{position:relative;isolation:isolate;overflow:hidden;min-height:670px;display:flex;align-items:center}
+    .hero::before{content:'';position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 72% 48%,rgba(244,201,95,.3),transparent 32%),linear-gradient(90deg,transparent 48%,rgba(255,255,255,.22) 48.1%);pointer-events:none}
+    .hero::after{content:'';position:absolute;inset:0;background-image:radial-gradient(#536654 1px,transparent 1px);background-size:21px 21px;opacity:.045;pointer-events:none;z-index:-1}
+    .hero-layout{display:grid;grid-template-columns:1.13fr .87fr;align-items:center;gap:30px;padding:65px 0 75px}
+    .hero-copy{position:relative;z-index:3}.hero-label{display:inline-flex;gap:9px;align-items:center;border:1.5px solid var(--ink);background:var(--paper-light);padding:8px 12px;border-radius:3px;font-size:12px;letter-spacing:.13em;font-weight:900;margin-bottom:27px}
+    .hero-label b{color:var(--red)}.hero-title{font-weight:1000;font-size:clamp(56px,5.55vw,91px);line-height:1.18;letter-spacing:-.075em;margin:0}
+    .hero-title>span{display:block}.hero-title .small-line{font-size:.61em;letter-spacing:-.05em;margin-bottom:9px}.hero-title .emphasis{position:relative;display:inline-block;color:var(--red)}
+    .hero-title .emphasis::after{content:'';height:11px;width:100%;position:absolute;bottom:4px;left:0;background:var(--yellow);z-index:-1;transform:rotate(-2deg)}
+    .hero-title .cycle-outer{display:inline-block;min-width:4.2em;white-space:nowrap}.hero-title .cycle{border-right:5px solid var(--red);padding-right:4px;animation:caretBlink .75s step-end infinite;color:var(--red)}
+    @keyframes caretBlink{50%{border-right-color:transparent}}
+    .hero-title .glyph{display:inline-block;opacity:0;transform:translateY(30px) rotate(4deg);animation:letterRise .65s cubic-bezier(.16,1,.3,1) forwards;animation-delay:var(--delay)}
+    @keyframes letterRise{to{opacity:1;transform:translateY(0) rotate(0)}}
+    .hero-desc{font-size:17px;line-height:1.95;max-width:525px;color:#4b564f;font-weight:600;margin:28px 0 30px}
+    .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:17px}.hero-actions .btn{min-width:178px}.hero-note{font-size:12px;letter-spacing:.07em;color:var(--muted);font-weight:800;margin-top:37px;display:flex;align-items:center;gap:9px}.hero-note .dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 0 5px #426b5924}
+    .hero-art{position:relative;height:550px;min-width:0;display:grid;place-items:center}
+    .art-circle{position:absolute;width:min(100%,465px);aspect-ratio:1;border:2px solid var(--ink);border-radius:50%;background:var(--yellow);top:48%;left:50%;transform:translate(-50%,-50%);box-shadow:16px 16px 0 rgba(37,53,47,.07)}
+    .art-circle:before{content:'';position:absolute;inset:17px;border:2px dashed rgba(37,53,47,.24);border-radius:50%}
+    .art-sun{position:absolute;right:-5%;top:19px;font-size:83px;line-height:1;color:var(--red);transform:rotate(15deg);animation:rotateSun 28s linear infinite}
+    @keyframes rotateSun{to{transform:rotate(375deg)}}
+    .hero-certificate{position:relative;width:342px;min-height:425px;background:#fffbf1;border:2.5px solid var(--ink);border-radius:4px;box-shadow:13px 16px 0 var(--forest);padding:22px 24px;transform:rotate(-7deg);animation:paperFloat 6s ease-in-out infinite}
+    @keyframes paperFloat{50%{transform:rotate(-5deg) translateY(-12px)}}
+    .hero-certificate:before{content:'';position:absolute;inset:9px;border:1px dashed rgba(37,53,47,.35);pointer-events:none}
+    .cert-top{display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:13px}.cert-mini-brand{font-size:18px;font-weight:1000;letter-spacing:.03em}.cert-id{font-size:10px;letter-spacing:.09em;font-weight:900;color:#68736b}
+    .cert-center{text-align:center;padding:34px 0 20px}.cert-pretitle{font-size:12px;letter-spacing:.28em;font-weight:900;color:var(--green)}.cert-title{font-size:49px;letter-spacing:.08em;line-height:1.35;font-weight:1000;margin:8px 0;color:var(--ink)}
+    .hero-stamp{width:171px;height:171px;border:8px double var(--red);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--red);font-size:35px;font-weight:1000;line-height:1.26;letter-spacing:.12em;transform:rotate(-16deg);margin:0 auto;position:relative;opacity:.93}
+    .hero-stamp:after{content:'GOOD THINGS';position:absolute;bottom:15px;left:0;right:0;text-align:center;letter-spacing:.14em;font:900 10px var(--font)}
+    .cert-foot{display:flex;justify-content:space-between;gap:12px;border-top:1.5px dashed #aeb3a8;margin-top:25px;padding-top:14px;font-size:11px;color:#6a766b;font-weight:850;letter-spacing:.04em}
+    .small-note{position:absolute;background:var(--red);color:white;border:2px solid var(--ink);padding:12px 15px;box-shadow:4px 4px 0 var(--ink);font-weight:1000;font-size:14px;transform:rotate(9deg);right:-15px;bottom:58px;z-index:4;animation:tagNudge 4s ease-in-out infinite}
+    .small-note:before{content:'✳';margin-right:6px;color:var(--yellow)}@keyframes tagNudge{50%{transform:rotate(4deg) translateY(-7px)}}
+    .tiny-ticket{position:absolute;top:63px;left:6px;transform:rotate(12deg);background:var(--white);border:2px solid var(--ink);box-shadow:3px 4px 0 var(--ink);font-weight:1000;padding:10px 14px;font-size:12px;z-index:1}
+    /* marquee */
+    .marquee{overflow:hidden;background:var(--forest);color:var(--paper-light);border-block:2px solid var(--ink)}.marquee-track{display:flex;gap:0;width:max-content;animation:marqueeGo 23s linear infinite}.marquee:hover .marquee-track{animation-play-state:paused}.marquee-track span{white-space:nowrap;display:inline-flex;align-items:center;gap:28px;font-size:14px;font-weight:1000;letter-spacing:.18em;padding:16px 25px}.marquee-track i{font-style:normal;color:var(--yellow);font-size:21px}
+    @keyframes marqueeGo{to{transform:translateX(-50%)}}
+    /* sections */
+    section{scroll-margin-top:85px}.section-wrap{padding:110px 0}.section-kicker{font-size:13px;color:var(--red);font-weight:1000;letter-spacing:.14em;margin-bottom:19px;display:flex;align-items:center;gap:10px}.section-kicker:before{content:'';width:28px;height:2px;background:currentColor}.section-heading{font-size:clamp(34px,4vw,58px);line-height:1.27;letter-spacing:-.055em;margin:0;font-weight:1000}.section-heading .red{color:var(--red)}.section-intro{color:var(--muted);font-size:16px;line-height:2;max-width:640px;margin:22px 0 0;font-weight:600}
+    .story{background:var(--paper-light);border-bottom:2px solid var(--ink)}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}.story-badge{width:100%;aspect-ratio:1/1;max-width:455px;position:relative;margin:auto}
+    .story-round{position:absolute;inset:9%;border-radius:50%;background:var(--red);border:3px solid var(--ink);display:grid;place-items:center;box-shadow:14px 14px 0 var(--yellow);transform:rotate(7deg)}
+    .story-round .story-inner{width:79%;aspect-ratio:1;border:2px dashed rgba(255,255,255,.7);border-radius:50%;display:grid;align-content:center;justify-items:center;color:var(--white);transform:rotate(-7deg)}.story-round .story-cn{font-size:clamp(30px,3.6vw,49px);font-weight:1000;line-height:1.35;letter-spacing:.02em;text-align:center}.story-round .story-en{font-size:11px;letter-spacing:.16em;font-weight:1000;margin-top:14px}.story-spark{position:absolute;font-size:80px;right:-6%;top:2%;color:var(--green);transform:rotate(-15deg)}.story-label{position:absolute;left:-2%;bottom:7%;z-index:4;padding:10px 18px;border:2px solid var(--ink);background:var(--yellow);font-size:14px;font-weight:1000;transform:rotate(-8deg);box-shadow:5px 5px 0 var(--ink)}
+    .story-text p{font-size:16px;line-height:2.18;color:#4b564e;margin:20px 0}.story-text strong{color:var(--red)}
+    .values{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap}.value-pill{font-size:12px;font-weight:900;padding:9px 12px;border:1.5px solid var(--green);border-radius:100px;color:var(--forest);background:#e6eee6}
+    /* philosophy */
+    .belief{padding:105px 0;background:var(--yellow);border-bottom:2px solid var(--ink)}.belief-lead{display:grid;grid-template-columns:.83fr 1.17fr;gap:50px;align-items:center}.belief-head{font-size:clamp(30px,3.7vw,54px);font-weight:1000;line-height:1.4;margin:0;letter-spacing:-.045em}.belief-head span{display:block;color:var(--red)}.belief-blurb{line-height:2;max-width:550px;font-size:17px;font-weight:650}
+    .process-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:65px}.process-card{background:var(--paper-light);border:2px solid var(--ink);border-radius:7px;padding:28px;position:relative;box-shadow:5px 5px 0 var(--ink);transition:transform .2s}.process-card:hover{transform:translateY(-6px)}.process-index{font-size:12px;letter-spacing:.16em;color:var(--red);font-weight:1000}.process-icon{font-size:48px;display:block;margin:21px 0}.process-card h3{font-size:24px;margin:0 0 12px}.process-card p{font-size:14px;line-height:1.8;color:#647066;margin:0}
+    /* products */
+    .products{background:var(--paper);border-bottom:2px solid var(--ink)}.products-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:38px}.product-note{font-size:12px;color:var(--green);font-weight:900;border:1.5px solid var(--green);padding:10px 13px;transform:rotate(3deg);white-space:nowrap}
+    .product-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.product-card{background:#fffcf4;border:2px solid var(--ink);border-radius:7px;overflow:hidden;box-shadow:5px 5px 0 var(--ink);display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}.product-card:hover{transform:translateY(-7px);box-shadow:7px 12px 0 var(--ink)}.product-art{height:258px;position:relative;display:grid;place-items:center;overflow:hidden;isolation:isolate;border-bottom:2px solid var(--ink)}.product-art:after{content:'';position:absolute;inset:0;background-image:radial-gradient(#2224 1px,transparent 1px);background-size:18px 18px;opacity:.09;z-index:-1}.product-art.red{background:#f6d8cf}.product-art.yellow{background:#f8e4a3}.product-art.green{background:#dce8da}.product-art.pink{background:#f4dedb}.product-art.blue{background:#d6e2e3}.product-art.cream{background:#efddc7}
+    .product-corner{position:absolute;top:14px;left:15px;font-size:11px;font-weight:1000;letter-spacing:.11em;border:1.5px solid var(--ink);padding:6px 9px;background:#fff9ed;z-index:2}.product-body{padding:23px;display:flex;flex-direction:column;flex:1}.product-no{font-size:11px;font-weight:1000;letter-spacing:.16em;color:var(--red)}.product-body h3{font-size:23px;margin:9px 0 10px;letter-spacing:-.04em}.product-body p{font-size:13px;line-height:1.85;color:#677168;margin:0 0 22px;flex:1}.product-bottom{display:flex;align-items:center;justify-content:space-between;border-top:1px dashed #b4bab1;padding-top:14px;gap:10px}.product-type{font-size:11px;color:var(--green);font-weight:900}.product-more{color:var(--red);border:0;background:none;font-weight:1000;white-space:nowrap;padding:6px 0;display:flex;align-items:center;gap:6px}.product-more:hover{text-decoration:underline}
+    /* drawings */
+    .art-paper{background:#fffdf3;border:2px solid var(--ink);width:170px;height:190px;transform:rotate(-9deg);box-shadow:9px 10px 0 rgba(37,53,47,.2);padding:17px;position:relative}.art-paper .mini-top{height:12px;border-block:2px solid var(--ink);font-size:9px;text-align:center;font-weight:900;line-height:9px}.art-paper .mini-lines{height:4px;background:#b7bfaa;width:95%;margin:21px 0 10px;box-shadow:0 16px 0 #b7bfaa,0 32px 0 #b7bfaa}.art-approval{position:absolute;bottom:17px;right:9px;border:5px double var(--red);border-radius:50%;width:105px;height:105px;display:grid;place-items:center;transform:rotate(-20deg);font-size:20px;font-weight:1000;color:var(--red);background:#fffefa33}.art-handle{position:absolute;right:23px;top:26px;width:78px;height:31px;border:2px solid var(--ink);border-radius:50%;background:var(--forest);transform:rotate(24deg);box-shadow:0 17px 0 -2px var(--forest),0 19px 0 var(--ink)}
+    .art-calendar{width:189px;min-height:193px;background:#fffdf4;border:2px solid var(--ink);border-radius:7px;box-shadow:8px 9px 0 #526c60;transform:rotate(8deg);text-align:center;overflow:hidden}.cal-red{background:var(--red);color:white;font-weight:1000;font-size:19px;padding:11px}.cal-content{padding:19px 9px}.cal-content b{font-size:34px;display:block;margin:2px}.cal-content span{font-size:11px;font-weight:850;color:var(--green)}.cal-ring{position:absolute;width:10px;height:20px;background:var(--ink);border-radius:5px;top:24px;z-index:3;box-shadow:93px 0 0 var(--ink);left:calc(50% - 52px)}
+    .art-coaster{width:206px;height:206px;border:3px solid var(--ink);border-radius:50%;background:var(--forest);display:grid;place-items:center;box-shadow:9px 10px 0 #c29a44;transform:rotate(-15deg);position:relative}.art-coaster:before{content:'';position:absolute;inset:14px;border:2px dashed var(--yellow);border-radius:50%}.art-coaster-inside{width:128px;height:128px;background:var(--yellow);border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;line-height:1.4;font-size:32px;color:var(--forest);font-weight:1000;text-align:center}.art-coaster-tag{position:absolute;bottom:1px;left:-12px;background:var(--red);color:white;padding:8px 12px;border:2px solid var(--ink);font-size:13px;font-weight:900;transform:rotate(8deg)}
+    .art-door{width:164px;height:207px;background:var(--red);border:3px solid var(--ink);border-radius:80px 80px 9px 9px;display:grid;place-items:center;transform:rotate(-9deg);box-shadow:8px 10px 0 #c58a7c;position:relative;color:#fff9ed}.art-door:before{content:'';width:17px;height:17px;position:absolute;border:3px solid var(--ink);background:var(--paper);border-radius:50%;top:26px}.art-door span{margin-top:35px;font-size:30px;text-align:center;line-height:1.5;font-weight:1000;letter-spacing:.05em}.art-door small{position:absolute;bottom:20px;font-size:9px;letter-spacing:.12em;font-weight:900}
+    .art-tray{width:212px;height:197px;position:relative;transform:rotate(12deg)}.tray-wedge{position:absolute;width:96px;height:96px;background:var(--red);border:3px solid var(--ink);border-radius:55px 20px 30px 18px;box-shadow:4px 5px 0 rgba(37,53,47,.18)}.tray-wedge:nth-child(1){left:8px;top:4px}.tray-wedge:nth-child(2){right:2px;top:4px;transform:scaleX(-1);background:#e69a51}.tray-wedge:nth-child(3){left:8px;bottom:3px;transform:scaleY(-1);background:#f5c95f}.tray-wedge:nth-child(4){right:2px;bottom:3px;transform:scale(-1);background:#b3c29a}.tray-center{position:absolute;left:80px;top:69px;width:52px;height:52px;background:var(--forest);border:3px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:27px;color:white}
+    .art-envelope{width:226px;height:159px;background:#fff9e9;border:2px solid var(--ink);box-shadow:8px 10px 0 #a66d4b;transform:rotate(-8deg);position:relative;overflow:hidden}.art-envelope:before{content:'';position:absolute;width:162px;height:162px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translate(-50%,-76%) rotate(45deg);left:50%;top:17px;background:#f8d0b2}.art-envelope-seal{position:absolute;top:49px;left:83px;width:63px;height:63px;background:var(--red);color:white;border-radius:50%;border:3px double var(--paper-light);display:grid;place-items:center;font-size:14px;font-weight:1000;transform:rotate(12deg);text-align:center;line-height:1.3}.art-envelope-flag{position:absolute;top:27px;right:13px;font-size:10px;font-weight:1000;color:var(--forest)}
+    /* interaction */
+    .apply{background:var(--forest);color:var(--paper-light);overflow:hidden;position:relative}.apply::before{content:'✳';position:absolute;right:-65px;top:-180px;font-size:480px;color:rgba(244,201,95,.08);line-height:1;pointer-events:none}
+    .apply-head{max-width:750px}.apply .section-kicker{color:var(--yellow)}.apply .section-heading .red{color:var(--yellow)}.apply .section-intro{color:#d6e0d4}
+    .apply-grid{display:grid;grid-template-columns:1fr .95fr;gap:43px;margin-top:55px;align-items:stretch}.apply-form{background:var(--paper-light);color:var(--ink);border:2px solid var(--ink);border-radius:7px;padding:33px;box-shadow:9px 9px 0 var(--yellow)}
+    .form-kicker{font-size:12px;letter-spacing:.16em;color:var(--red);font-weight:1000}.form-title{font-size:28px;margin:7px 0 25px;font-weight:1000}.field{margin:22px 0}.field label{font-size:14px;font-weight:900;display:block;margin-bottom:10px}.field label span{color:var(--red)}.field input,.field select{width:100%;border:2px solid var(--ink);padding:14px 14px;background:#fffdf8;border-radius:5px;min-height:52px;outline-offset:3px;font-size:15px}.field input::placeholder{color:#93998e}.form-help{font-size:12px;line-height:1.7;color:#7a8376}.apply-submit{width:100%;margin-top:18px}
+    .approval-side{min-width:0}.approval-preview{background:var(--paper-light);border:3px solid var(--ink);color:var(--ink);height:100%;min-height:485px;position:relative;padding:27px;border-radius:6px;box-shadow:10px 10px 0 #18372d;overflow:hidden}.approval-preview:before{content:'';position:absolute;inset:13px;border:1.5px dashed #aeb6a5;pointer-events:none}.approval-preview:after{content:'';position:absolute;width:230px;height:230px;border:2px solid #efe8da;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;pointer-events:none}
+    .approval-inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;min-height:425px}.preview-top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:12px;font-size:11px;font-weight:900}.preview-heading{text-align:center;margin:25px 0 10px}.preview-heading b{display:block;font-size:26px}.preview-heading span{font-size:11px;color:var(--green);letter-spacing:.2em;font-weight:950}.preview-wish{margin:19px auto 0;text-align:center;font-size:21px;line-height:1.6;font-weight:950;max-width:300px;word-break:break-word}.preview-stamp{width:170px;height:170px;border:8px double var(--red);color:var(--red);border-radius:50%;align-self:center;margin:auto;display:grid;place-items:center;text-align:center;line-height:1.4;font-size:32px;font-weight:1000;transform:rotate(-14deg) scale(.87);opacity:.32;transition:opacity .4s,transform .55s cubic-bezier(.22,1.5,.25,1)}.preview-stamp.approved{transform:rotate(-14deg) scale(1);opacity:1;animation:stampPop .55s cubic-bezier(.18,1.8,.3,1)}@keyframes stampPop{0%{transform:rotate(-28deg) scale(1.7);opacity:0}60%{transform:rotate(-14deg) scale(.86);opacity:1}100%{transform:rotate(-14deg) scale(1);opacity:1}}
+    .preview-bottom{margin-top:auto;border-top:1.5px dashed #aab4a7;padding-top:11px;font-size:11px;font-weight:850;color:#657062;display:flex;justify-content:space-between;gap:10px}.preview-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}.preview-actions .btn{flex:1}.preview-actions .btn[disabled]{opacity:.5;cursor:not-allowed;box-shadow:none;transform:none}.honesty{margin-top:15px;color:#b9cdbf;font-size:11px;line-height:1.75}
+    /* send */
+    .send{background:var(--paper-light);border-bottom:2px solid var(--ink)}.send-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center}.send-quote{font-size:clamp(34px,4.5vw,67px);font-weight:1000;line-height:1.37;letter-spacing:-.055em;margin:0 0 24px}.send-quote em{font-style:normal;color:var(--red);text-decoration:underline;text-decoration-color:var(--yellow);text-decoration-thickness:9px;text-underline-offset:9px}.send-text{color:#68746b;line-height:2;font-weight:650;margin-bottom:25px}.send-image{background:var(--yellow);border:2px solid var(--ink);box-shadow:12px 12px 0 var(--red);height:360px;border-radius:50% 50% 8px 8px;position:relative;display:grid;place-items:center;overflow:hidden}.send-envelop{width:260px;height:172px;background:var(--paper-light);border:3px solid var(--ink);transform:rotate(-10deg);box-shadow:8px 10px 0 rgba(37,53,47,.25);position:relative;display:grid;place-items:center;font-size:27px;font-weight:1000;color:var(--red)}.send-envelop:before{content:'';position:absolute;inset:0;clip-path:polygon(0 0,50% 53%,100% 0);background:#e6c6af;border-bottom:2px solid var(--ink)}.send-envelop span{position:relative;z-index:1;display:block;background:#fff8ec;border:3px double var(--red);padding:9px 13px;transform:rotate(10deg)}.send-image:before{content:'✳';position:absolute;color:var(--red);font-size:130px;top:-20px;right:10px;transform:rotate(-20deg)}
+    /* footer */
+    footer{background:var(--ink);color:var(--paper-light);padding:63px 0 32px}.footer-top{display:flex;justify-content:space-between;gap:40px;align-items:start}.footer-brand{font-size:clamp(37px,5.6vw,80px);font-weight:1000;letter-spacing:-.05em;line-height:1.2;margin:12px 0}.footer-slogan{font-size:14px;line-height:1.9;color:#d1d7cb}.footer-links{display:flex;flex-wrap:wrap;gap:22px;font-size:13px;font-weight:850;margin-top:26px}.footer-links a:hover{color:var(--yellow)}.footer-stamp{color:var(--yellow);border:6px double var(--yellow);border-radius:50%;width:151px;height:151px;display:grid;place-items:center;text-align:center;transform:rotate(13deg);font-size:23px;font-weight:1000;line-height:1.4;flex-shrink:0}
+    .footer-bottom{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #ffffff37;padding-top:25px;margin-top:55px;font-size:11px;letter-spacing:.06em;color:#b2bdb3;line-height:1.8}.footer-bottom p{margin:0}
+    /* dialog */
+    dialog{border:2px solid var(--ink);background:var(--paper-light);color:var(--ink);padding:0;border-radius:9px;max-width:min(520px,calc(100vw - 30px));width:100%;box-shadow:10px 10px 0 var(--ink)}dialog::backdrop{background:#1d3028bb;backdrop-filter:blur(3px)}.modal-top{background:var(--yellow);border-bottom:2px solid var(--ink);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:1000;letter-spacing:.13em}.close-dialog{border:2px solid var(--ink);background:var(--paper-light);font-size:18px;width:34px;height:34px;border-radius:5px}.modal-content{padding:28px}.modal-content h3{font-size:29px;margin:0 0 15px}.modal-content p{font-size:15px;line-height:1.9;color:#667164}.modal-content h4{margin:23px 0 7px;color:var(--red)}.modal-content .modal-foot{border-top:1px dashed var(--line);padding-top:16px;font-size:12px;color:var(--green);font-weight:800;margin-top:25px}
+    .toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,25px);background:var(--ink);color:white;border:2px solid var(--yellow);border-radius:8px;padding:11px 21px;font-weight:900;font-size:13px;opacity:0;pointer-events:none;transition:transform .3s,opacity .3s;z-index:200;box-shadow:4px 5px 0 var(--yellow)}.toast.visible{opacity:1;transform:translate(-50%,0)}
+    .reveal{opacity:0;transform:translateY(25px);transition:opacity .72s ease,transform .72s cubic-bezier(.2,.7,.1,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}
+    @media(max-width:1090px){.container{width:min(100% - 40px,1100px)}.hero-title{font-size:clamp(52px,6.3vw,74px)}.hero-art{height:470px}.hero-certificate{width:295px;min-height:378px;padding:18px}.cert-center{padding:22px 0 14px}.cert-title{font-size:40px}.hero-stamp{width:150px;height:150px;font-size:30px}.art-circle{width:385px}.story-grid{gap:45px}.story-round .story-cn{font-size:35px}}
+    @media(max-width:760px){html{scroll-padding-top:75px}.container{width:min(100% - 32px,600px)}.announcement{font-size:10px;letter-spacing:.07em}.nav{height:67px}.brand-name{font-size:17px}.brand-en{font-size:8px}.brand-mark{width:39px;height:39px}.nav-cta{margin-left:auto;padding:9px 11px;font-size:12px}.hamburger{display:block}.nav-links{display:none;position:absolute;left:0;right:0;top:67px;background:var(--paper);padding:18px 20px 24px;border-bottom:2px solid var(--ink);box-shadow:0 7px 11px #25352f16;margin:0;gap:0;flex-direction:column;align-items:stretch}.nav-links.open{display:flex}.nav-links a{padding:13px 5px;border-bottom:1px solid var(--line)}.hero{min-height:auto}.hero-layout{grid-template-columns:1fr;gap:8px;padding:54px 0 55px}.hero-label{font-size:10px;margin-bottom:26px}.hero-title{font-size:clamp(49px,10vw,71px)}.hero-desc{font-size:15px;line-height:1.9;margin:22px 0}.hero-art{height:450px;margin-top:15px}.art-circle{width:350px}.hero-certificate{width:275px;min-height:366px}.cert-title{font-size:37px}.hero-stamp{width:134px;height:134px;font-size:26px}.tiny-ticket{left:-1%;top:50px}.small-note{right:0;bottom:25px}.section-wrap{padding:76px 0}.section-heading{font-size:clamp(34px,8vw,48px)}.story-grid,.belief-lead,.apply-grid,.send-layout{grid-template-columns:1fr;gap:35px}.story-badge{max-width:335px;order:2}.story-text{order:1}.story-spark{font-size:64px}.belief{padding:77px 0}.process-cards{grid-template-columns:1fr;gap:13px;margin-top:36px}.process-card{padding:21px}.process-icon{font-size:35px;margin:14px 0}.process-card h3{font-size:21px}.products-head{align-items:start;flex-direction:column}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.product-art{height:190px}.product-body{padding:15px}.product-body h3{font-size:19px}.product-body p{font-size:12px}.art-paper{transform:rotate(-8deg) scale(.82)}.art-calendar{transform:rotate(8deg) scale(.81)}.art-coaster{transform:rotate(-15deg) scale(.75)}.art-door{transform:rotate(-9deg) scale(.76)}.art-tray{transform:rotate(12deg) scale(.73)}.art-envelope{transform:rotate(-8deg) scale(.7)}.apply-form{padding:23px}.approval-preview{min-height:420px}.approval-inner{min-height:360px}.send-image{max-width:470px;width:100%;margin:auto}.footer-top{flex-direction:column}.footer-stamp{width:112px;height:112px;font-size:19px;align-self:flex-end;margin-top:-25px}.footer-bottom{flex-direction:column;margin-top:35px}}
+    @media(max-width:440px){.nav-cta{display:none}.hamburger{margin-left:auto}.hero-title{font-size:clamp(43px,11.3vw,57px)}.hero-actions .btn{min-width:0;font-size:13px;padding:10px 12px;gap:6px}.hero-desc{font-size:14px}.hero-art{height:400px}.art-circle{width:310px}.hero-certificate{width:248px;min-height:336px}.hero-stamp{width:119px;height:119px;font-size:24px}.cert-center{padding:17px 0 7px}.cert-title{font-size:34px}.cert-foot{margin-top:14px}.small-note{font-size:11px;padding:8px;bottom:16px}.tiny-ticket{font-size:10px}.product-grid{gap:12px}.product-art{height:156px}.art-paper{transform:rotate(-8deg) scale(.66)}.art-calendar{transform:rotate(8deg) scale(.65)}.art-coaster{transform:rotate(-15deg) scale(.59)}.art-door{transform:rotate(-9deg) scale(.62)}.art-tray{transform:rotate(12deg) scale(.59)}.art-envelope{transform:rotate(-8deg) scale(.56)}.product-body h3{font-size:17px}.product-body p{font-size:11px}.product-more{font-size:11px}.product-type{font-size:10px}.send-image{height:290px}.send-envelop{transform:rotate(-10deg) scale(.83)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}.hero-title .glyph{opacity:1;transform:none}}
+    @media print{.announcement,.site-header,.marquee,.hero,.story,.belief,.products,.send,footer,.apply-head,.apply-form,.preview-actions,.honesty{display:none!important}body{background:white}.apply,.section-wrap{background:white!important;padding:0!important;color:var(--ink)!important}.apply-grid{display:block;margin:0}.approval-preview{width:100%;box-shadow:none;min-height:680px}.approval-inner{min-height:615px}.preview-stamp{opacity:1!important}.approval-side{width:100%}}
+  </style>
+</head>
+<body>
+  <div class="announcement"><span class="twinkle">✳</span> 好事製造局今日正常營業 ・ 生活大小事，歡迎申請 <span class="twinkle">✳</span></div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="好事製造局，回到首頁">
+        <span class="brand-mark" aria-hidden="true">好</span><span><span class="brand-name">好事製造局</span><span class="brand-en">GOOD THINGS DEPT.</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="主要導覽">
+        <a href="#about">關於本局</a><a href="#values">好事三步驟</a><a href="#products">局內商品</a><a href="#apply">線上好事申請</a>
+      </nav>
+      <a class="nav-cta" href="#apply">好事申請中 ↗</a>
+      <button class="hamburger" id="menuButton" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="展開選單">☰</button>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <div class="hero-label"><b>✳</b> GOOD THINGS ARE IN PROGRESS <b>NO.001</b></div>
+          <h1 class="hero-title" id="hero-title">
+            <span class="small-line">日子有點難？</span>
+            <span class="animated-glyphs" data-animate="好事不會">好事不會</span>
+            <span>自己<span class="emphasis">掉下來。</span></span>
+            <span>那就<span class="cycle-outer"><span class="cycle" id="heroCycle" aria-live="off">製造它！</span></span></span>
+          </h1>
+          <p class="hero-desc">把台灣的吉祥話、春聯與祝福文化，變成可以蓋章、翻轉、傳遞的日常小物。從今天開始，不等好運，自己動手製造好事！</p>
+          <div class="hero-actions"><a class="btn btn-red" href="#apply">立即申請好事 <span aria-hidden="true">↗</span></a><a class="btn btn-plain" href="#products">看看局內商品 <span aria-hidden="true">→</span></a></div>
+          <p class="hero-note"><span class="dot"></span> 本局提供 100% 創意服務，不保證中樂透。</p>
+        </div>
+        <div class="hero-art" aria-label="好事製造局核准文件插畫">
+          <div class="art-circle" aria-hidden="true"></div><div class="art-sun" aria-hidden="true">✳</div>
+          <div class="tiny-ticket">台式吉祥文化 × 現代生活</div>
+          <div class="hero-certificate">
+            <div class="cert-top"><span class="cert-mini-brand">好事製造局</span><span class="cert-id">DOC. NO. GT-001</span></div>
+            <div class="cert-center"><div class="cert-pretitle">OFFICIAL GOOD THINGS</div><div class="cert-title">今日好事<br>核准通知</div></div>
+            <div class="hero-stamp" aria-hidden="true">好事<br>核准</div>
+            <div class="cert-foot"><span>承辦單位｜好運核准科</span><span>STATUS: ✓</span></div>
+          </div>
+          <div class="small-note">好事正在發生！</div>
+        </div>
+      </div>
+    </section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>好事請進 <i>✳</i> HAPPY THINGS ONLY <i>✳</i> 今日宜快樂 <i>✳</i> GOOD THINGS DEPT. <i>✳</i> 好事配送中 <i>✳</i></span><span>好事請進 <i>✳</i> HAPPY THINGS ONLY <i>✳</i> 今日宜快樂 <i>✳</i> GOOD THINGS DEPT. <i>✳</i> 好事配送中 <i>✳</i></span></div></div>
+    <section id="about" class="story section-wrap">
+      <div class="container story-grid">
+        <div class="story-badge reveal" aria-hidden="true"><div class="story-round"><div class="story-inner"><div class="story-cn">好事<br>不只會發生</div><div class="story-en">MAKE GOOD THINGS HAPPEN</div></div></div><div class="story-spark">✳</div><div class="story-label">幸福專案，正式開工！</div></div>
+        <div class="story-text reveal"><div class="section-kicker">01 / ABOUT OUR DEPT.</div><h2 class="section-heading">一間專門<br>製造<span class="red">小幸福</span>的局。</h2>
+          <p>過年時的一句吉祥話、門上的春聯、朋友隨口說的「祝你好運」——台灣人的生活裡，藏著好多溫暖的祝福。</p>
+          <p>我們想知道：<strong>如果祝福不只能說出口，還能真的動手製造呢？</strong></p>
+          <p>於是，「好事製造局」誕生了！我們把熟悉的吉祥文化變成好玩的生活用品，讓每個人都能成為自己的<strong>好事製造員。</strong></p>
+          <div class="values"><span class="value-pill">#文化再創造</span><span class="value-pill">#趣味參與</span><span class="value-pill">#分享祝福</span><span class="value-pill">#日常小幸福</span></div>
+        </div>
+      </div>
+    </section>
+    <section id="values" class="belief">
+      <div class="container">
+        <div class="belief-lead reveal"><div><div class="section-kicker">02 / HOW WE WORK</div><h2 class="belief-head">好事怎麼來？<span>本局有辦法。</span></h2></div><p class="belief-blurb">我們不只是把吉祥話印在商品上，而是把「申請 → 製造 → 傳遞」變成實際可以操作的日常體驗。</p></div>
+        <div class="process-cards">
+          <article class="process-card reveal"><span class="process-index">DEPARTMENT 01</span><span class="process-icon" aria-hidden="true">▣</span><h3>① 申請好事</h3><p>填一張小小申請單，為今天立下目標。放慢一點、早點睡、勇敢說聲謝謝，都值得被核准。</p></article>
+          <article class="process-card reveal"><span class="process-index">DEPARTMENT 02</span><span class="process-icon" aria-hidden="true">✓</span><h3>② 製造好事</h3><p>蓋個章、翻個頁、轉個杯墊。讓祝福變成行動，把一成不變的日常加點好玩。</p></article>
+          <article class="process-card reveal"><span class="process-index">DEPARTMENT 03</span><span class="process-icon" aria-hidden="true">✉</span><h3>③ 配送好事</h3><p>把一句鼓勵包裝成一份小禮，送給朋友、家人，也別忘了把好心情留給自己。</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="products" class="products section-wrap">
+      <div class="container">
+        <div class="products-head"><div class="reveal"><div class="section-kicker">03 / GOOD THINGS COLLECTION</div><h2 class="section-heading">本局商品<span class="red">一覽表。</span></h2><p class="section-intro">每件商品都有一個小任務。挑一樣喜歡的，讓好事從生活裡慢慢發生。</p></div><div class="product-note">✳ 品牌概念商品・尚未開賣</div></div>
+        <div class="product-grid">
+          <article class="product-card reveal"><div class="product-art red"><span class="product-corner">核准系列</span><div class="art-paper"><div class="mini-top">GOOD THINGS ONLY</div><div class="mini-lines"></div><div class="art-approval">核准 ✓</div></div><div class="art-handle" aria-hidden="true"></div></div><div class="product-body"><span class="product-no">PRODUCT 001</span><h3>好事核准章</h3><p>每件小事都值得肯定！寫下今天的小目標，完成後蓋個核准章。</p><div class="product-bottom"><span class="product-type">印章 × 手帳</span><button class="product-more" data-product="stamp" type="button">查看玩法 →</button></div></div></article>
+          <article class="product-card reveal"><div class="product-art yellow"><span class="product-corner">日常系列</span><div class="cal-ring"></div><div class="art-calendar"><div class="cal-red">今日宜好事</div><div class="cal-content"><b>宜・休息</b><span>不努力一下也沒關係</span></div></div></div><div class="product-body"><span class="product-no">PRODUCT 002</span><h3>今日宜好事桌曆</h3><p>把傳統「今日宜」變成幽默的生活提醒，翻一頁，給自己一個新理由。</p><div class="product-bottom"><span class="product-type">桌曆 × 翻頁</span><button class="product-more" data-product="calendar" type="button">查看玩法 →</button></div></div></article>
+          <article class="product-card reveal"><div class="product-art green"><span class="product-corner">旺來系列</span><div class="art-coaster"><div class="art-coaster-inside">旺<br>來</div><div class="art-coaster-tag">今天你最旺！</div></div></div><div class="product-body"><span class="product-no">PRODUCT 003</span><h3>旺來轉轉杯墊</h3><p>把鳳梨「旺來」的吉祥諧音變成小轉盤，轉出今天想給自己的祝福。</p><div class="product-bottom"><span class="product-type">杯墊 × 旋轉</span><button class="product-more" data-product="coaster" type="button">查看玩法 →</button></div></div></article>
+          <article class="product-card reveal"><div class="product-art pink"><span class="product-corner">好運系列</span><div class="art-door"><span>好事<br>請進</span><small>GOOD THINGS WELCOME</small></div></div><div class="product-body"><span class="product-no">PRODUCT 004</span><h3>好事到門口</h3><p>春聯變身雙面互動門牌。心情好就歡迎進門，想休息就翻面告知。</p><div class="product-bottom"><span class="product-type">門牌 × 翻面</span><button class="product-more" data-product="door" type="button">查看玩法 →</button></div></div></article>
+          <article class="product-card reveal"><div class="product-art blue"><span class="product-corner">惜物系列</span><div class="art-tray"><span class="tray-wedge"></span><span class="tray-wedge"></span><span class="tray-wedge"></span><span class="tray-wedge"></span><span class="tray-center">事</span></div></div><div class="product-body"><span class="product-no">PRODUCT 005</span><h3>事事有解整理盤</h3><p>柿子造型的模組收納盤，把生活裡的零零碎碎，一瓣一瓣整理好。</p><div class="product-bottom"><span class="product-type">收納 × 拼接</span><button class="product-more" data-product="tray" type="button">查看玩法 →</button></div></div></article>
+          <article class="product-card reveal"><div class="product-art cream"><span class="product-corner">祝福系列</span><div class="art-envelope"><span class="art-envelope-flag">POST / 001</span><div class="art-envelope-seal">好事<br>配送</div></div></div><div class="product-body"><span class="product-no">PRODUCT 006</span><h3>好事配送包</h3><p>像寄公文一樣寄祝福。選一個願望、蓋一個章，把好心情打包給別人。</p><div class="product-bottom"><span class="product-type">卡片 × 寄送</span><button class="product-more" data-product="delivery" type="button">查看玩法 →</button></div></div></article>
+        </div>
+      </div>
+    </section>
+    <section id="apply" class="apply section-wrap">
+      <div class="container">
+        <div class="apply-head reveal"><div class="section-kicker">04 / OFFICIAL REQUEST FORM</div><h2 class="section-heading">你的好事，<br><span class="red">現在正式受理。</span></h2><p class="section-intro">來試試「好事線上申請」！輸入今天的小心願，親手按下核准鍵，領取專屬的好事通知單。</p></div>
+        <div class="apply-grid">
+          <form class="apply-form reveal" id="wishForm"><span class="form-kicker">GT DEPARTMENT / 申請專區</span><h3 class="form-title">✳ 好事申請單</h3>
+            <div class="field"><label for="wishCategory">01　申請科別 <span>*</span></label><select id="wishCategory" required><option value="好心情科">好心情科｜今天要開心</option><option value="休息核准科">休息核准科｜好好休息</option><option value="勇氣製造科">勇氣製造科｜勇敢一點</option><option value="好運配送科">好運配送科｜祝福別人</option></select></div>
+            <div class="field"><label for="wishInput">02　申請事由 <span>*</span></label><input id="wishInput" type="text" minlength="2" maxlength="36" placeholder="例如：今天下班要好好休息" autocomplete="off" required><p class="form-help">寫一件現在想為自己做的小事，不用很偉大也可以。</p></div>
+            <div class="field"><label for="wishName">03　好事申請員（選填）</label><input id="wishName" type="text" maxlength="16" placeholder="你的名字或暱稱" autocomplete="off"></div>
+            <button class="btn btn-red apply-submit" type="submit">送交本局，正式核准 <span aria-hidden="true">✳</span></button>
+          </form>
+          <div class="approval-side reveal">
+            <div class="approval-preview" id="approvalPrint"><div class="approval-inner"><div class="preview-top"><span>好事製造局｜GOOD THINGS DEPT.</span><span id="previewId">NO. GT-0001</span></div><div class="preview-heading"><span>OFFICIAL APPROVAL NOTICE</span><b>好事核准通知單</b></div><div class="preview-wish" id="previewWish">今天，你想製造什麼好事？</div><div class="preview-stamp" id="previewStamp" aria-live="polite">等待<br>核准</div><div class="preview-bottom"><span id="previewPerson">申請人｜尚未填寫</span><span id="previewDate">STATUS: PENDING</span></div></div></div>
+            <div class="preview-actions"><button type="button" class="btn btn-small" id="copyApproval" disabled>複製核准單 ⧉</button><button type="button" class="btn btn-small btn-plain" id="printApproval" disabled>列印核准單 ↗</button></div>
+            <p class="honesty">※ 此為趣味互動體驗，非政府機關服務，亦不保證願望實現。網站不會將輸入資料傳送到伺服器。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="send section-wrap"><div class="container send-layout"><div class="reveal"><div class="section-kicker">05 / SPREAD THE GOOD</div><p class="send-quote">好事不只自己留著，<br>還要<span><em>寄給你。</em></span></p><p class="send-text">朋友需要打氣、家人值得一句謝謝，或是想鼓勵正在努力的自己？一點點心意，就是好事製造的起點。</p><a class="btn" href="#apply">先申請一份好事 ↗</a></div><div class="send-image reveal" aria-label="印有好事配送章的信封插畫"><div class="send-envelop"><span>好事配送中 ✳</span></div></div></div></section>
+  </main>
+  <footer><div class="container"><div class="footer-top"><div><div class="eyebrow"><span class="dash"></span> HAVE A GOOD DAY, ALWAYS.</div><div class="footer-brand">好事製造局<span style="color:var(--yellow)">✳</span></div><p class="footer-slogan">好事不只會發生，還可以自己製造！<br>把台灣的祝福文化，帶回你我的每一天。</p><nav class="footer-links" aria-label="頁尾導覽"><a href="#about">品牌故事 ↗</a><a href="#products">系列商品 ↗</a><a href="#apply">申請好事 ↗</a><a href="#top">回到頂端 ↑</a></nav></div><div class="footer-stamp" aria-hidden="true">日日好事<br>正式核准</div></div><div class="footer-bottom"><p>© <span id="currentYear">2026</span> GOOD THINGS DEPT. 好事製造局</p><p>品牌設計概念展示網站｜商品尚未正式販售・圖片為網頁原創示意插畫</p></div></div></footer>
+  <dialog id="productDialog" aria-labelledby="dialogProductName"><div class="modal-top"><span>GOOD THINGS / PRODUCT FILE</span><button type="button" class="close-dialog" id="closeDialog" aria-label="關閉商品介紹">×</button></div><div class="modal-content"><div class="form-kicker" id="dialogProductNumber"></div><h3 id="dialogProductName"></h3><p id="dialogProductDesc"></p><h4>✳ 怎麼玩？</h4><p id="dialogProductPlay"></p><h4>✳ 為什麼這樣設計？</h4><p id="dialogProductCulture"></p><div class="modal-foot">商品企劃展示・目前未提供線上購買</div></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+    (() => {
+      'use strict';
+      document.getElementById('currentYear').textContent = String(new Date().getFullYear());
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && !reduceMotion) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => { if (entry.isIntersecting) {entry.target.classList.add('is-visible');observer.unobserve(entry.target);} });
+        }, { threshold:.1, rootMargin:'0px 0px -30px 0px' });
+        els.forEach((el,i) => { el.style.transitionDelay = (i%3)*75+'ms'; observer.observe(el); });
+      } else {els.forEach(el=>el.classList.add('is-visible'));}
+      if (!reduceMotion) {
+        document.querySelectorAll('.animated-glyphs').forEach(el=>{
+          const text=el.textContent;el.textContent='';Array.from(text).forEach((char,i)=>{const span=document.createElement('span');span.className='glyph';span.textContent=char;span.style.setProperty('--delay',(.2+i*.095)+'s');el.append(span);});
+        });
+        const cycle=document.getElementById('heroCycle');const words=['製造它！','傳出去！','做出來！'];let wi=0;
+        const showWord=()=>{wi=(wi+1)%words.length;cycle.style.opacity='0';cycle.style.transform='translateY(8px)';setTimeout(()=>{cycle.textContent=words[wi];cycle.style.opacity='1';cycle.style.transform='translateY(0)';},240);};
+        cycle.style.transition='opacity .24s,transform .24s';setInterval(showWord,3200);
+      }
+      const menu=document.getElementById('menuButton');const links=document.getElementById('navLinks');
+      menu.addEventListener('click',()=>{let expanded=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!expanded));menu.textContent=expanded?'☰':'×';menu.setAttribute('aria-label',expanded?'展開選單':'關閉選單');links.classList.toggle('open',!expanded);});
+      links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';menu.setAttribute('aria-label','展開選單');}));
+      const products={
+        stamp:{n:'PRODUCT 001',name:'好事核准章',desc:'一套可以替換字樣的橡皮章與好事申請卡，為完成的小事留下紀錄。',play:'寫下今天想完成的生活任務；完成後挑一顆章，蓋上「正式核准」「好事達成」，貼進手帳或放在桌面上提醒自己。',culture:'借用台灣人熟悉的祝福語與傳統蓋章形式，再融合虛構的行政核准文化，將「等好運」轉變成「採取小行動」。'},
+        calendar:{n:'PRODUCT 002',name:'今日宜好事桌曆',desc:'把傳統曆法的「宜」字轉譯為幽默的現代生活提醒。',play:'每天翻一張「今日宜」提示；也可以把自己選擇的任務小卡插入桌曆，為今天安排值得期待的小事。',culture:'沿用傳統曆法「今日宜」的文字形式，但內容明確是品牌創作，不代表真實農民曆建議。'},
+        coaster:{n:'PRODUCT 003',name:'旺來轉轉杯墊',desc:'可以旋轉選擇祝福的雙層杯墊，讓每次喝飲料都多一點儀式感。',play:'握住下層、轉動上層的刻度，讓視窗停在「旺工作」「旺心情」「旺好眠」等祝福提示。',culture:'取材鳳梨的臺語「旺來」吉祥諧音，以旋轉與停格功能創造日常互動，而不只把鳳梨印在杯墊表面。'},
+        door:{n:'PRODUCT 004',name:'好事到門口',desc:'可翻面的趣味門牌，讓門口變成生活狀態的展示欄。',play:'正面是「好事請進」，反面為「正在補充好運，請勿打擾」；還能替換不同的狀態牌，與室友、家人分享心情。',culture:'從貼春聯、迎好運的概念出發，轉換成日常可用的門牌資訊設計，保留歡迎與祝福的精神。'},
+        tray:{n:'PRODUCT 005',name:'事事有解整理盤',desc:'以柿子作為「事事」意象，發展成可拆分的小托盤。',play:'將四片小收納格組合成完整柿子，或依桌面需求拆開分區，放置鑰匙、飾品、零錢與文具。',culture:'利用「柿／事」的吉祥諧音，但將「事事有解」落在真正可拆可組的物件結構上。'},
+        delivery:{n:'PRODUCT 006',name:'好事配送包',desc:'把祝福卡、核准章、收據式填寫單整合成一份互動禮盒。',play:'選擇「好運」「平安」「勇氣」等主題，填寫祝福寄件單，蓋上「好事配送中」的章，再裝進信封送給朋友。',culture:'借鏡台灣常見的祝福語與書信文化，融合虛構公文配送的幽默情境，使送禮變成一段互動流程。'}
+      };
+      const dialog=document.getElementById('productDialog');
+      document.querySelectorAll('[data-product]').forEach(b=>b.addEventListener('click',()=>{const p=products[b.dataset.product];if(!p)return;document.getElementById('dialogProductNumber').textContent=p.n;document.getElementById('dialogProductName').textContent=p.name;document.getElementById('dialogProductDesc').textContent=p.desc;document.getElementById('dialogProductPlay').textContent=p.play;document.getElementById('dialogProductCulture').textContent=p.culture;if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');}));
+      document.getElementById('closeDialog').addEventListener('click',()=>dialog.close());
+      dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
+      const form=document.getElementById('wishForm'),stamp=document.getElementById('previewStamp'),copy=document.getElementById('copyApproval'),print=document.getElementById('printApproval');
+      const result={};let seq=0;const toast=document.getElementById('toast');let toastTimer;
+      const say=message=>{toast.textContent=message;toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),2700);};
+      form.addEventListener('submit',event=>{
+        event.preventDefault();if(!form.reportValidity())return;
+        const wish=document.getElementById('wishInput').value.trim();if(wish.length<2){say('請至少輸入兩個字的申請事由');return;}
+        const name=document.getElementById('wishName').value.trim()||'匿名好事製造員';const cat=document.getElementById('wishCategory').value;
+        Object.assign(result,{wish,name,cat,date:new Date().toLocaleDateString('zh-TW',{year:'numeric',month:'2-digit',day:'2-digit'}),id:'GT-'+String(++seq).padStart(4,'0')});
+        document.getElementById('previewId').textContent='NO. '+result.id;
+        document.getElementById('previewWish').textContent='「'+wish+'」';document.getElementById('previewPerson').textContent='申請人｜'+name;
+        document.getElementById('previewDate').textContent=result.date;
+        stamp.classList.remove('approved');stamp.textContent='好事\n核准';stamp.style.whiteSpace='pre-line';void stamp.offsetWidth;stamp.classList.add('approved');
+        copy.disabled=false;print.disabled=false;say('叮！你的好事申請已獲本局核准 ✳');
+        if (window.innerWidth<760 && !reduceMotion) document.getElementById('approvalPrint').scrollIntoView({behavior:'smooth',block:'center'});
+      });
+      copy.addEventListener('click',async()=>{
+        if(!result.id)return;const str=`✳ 好事製造局｜好事核准通知單\n案件編號：${result.id}\n申請科別：${result.cat}\n申請人：${result.name}\n申請事項：${result.wish}\n核准日期：${result.date}\n狀態：好事核准 ✓\n好事不只會發生，還可以自己製造！`;
+        try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(str);else{const t=document.createElement('textarea');t.value=str;t.style.position='fixed';t.style.opacity='0';document.body.append(t);t.select();if(!document.execCommand('copy'))throw Error('copy');t.remove();}say('核准單文字已複製，可以分享給朋友！');}
+        catch(e){say('複製失敗，請使用瀏覽器的文字選取功能。');}
+      });
+      print.addEventListener('click',()=>{if(result.id)window.print();});
+    })();
+  </script>
+</body>
+</html>
